@@ -1,0 +1,21 @@
+<!-- templates/users/user_detail.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Details</title>
+</head>
+<body>
+    <h1>User Details</h1>
+    <p><strong>First Name:</strong> {{ user.firstname }}</p>
+    <p><strong>Last Name:</strong> {{ user.lastname }}</p>
+    <p><strong>Date of Birth:</strong> {{ user.dob }}</p>
+    <p><strong>Gender:</strong> {{ user.gender }}</p>
+    <p><strong>Password:</strong> {{ user.password }}</p>
+    <p><strong>E-mail:</strong> {{ user.email }}</p>
+
+    <a href="{% url 'user_update' user.pk %}">Edit</a>
+    <a href="{% url 'user_delete' user.pk %}">Delete</a>
+    <br><br>
+    <a href="{% url 'user_list' %}">Back to List</a>
+</body>
+</html>
