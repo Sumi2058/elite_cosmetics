@@ -15,8 +15,9 @@ def order_detail(request, order_id):
 
 
 # Create new order
-def order_create(request, user_id, product_id):
-    user = get_object_or_404(User, id=user_id)
+def order_create(request,product_id):
+    print(request)
+    # user = get_object_or_404(User, id=user_id)
     product = get_object_or_404(Product, id=product_id)
 
     if request.method == "POST":

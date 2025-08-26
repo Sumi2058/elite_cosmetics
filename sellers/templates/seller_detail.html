@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}Seller Details{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2>{{ seller.business_name }}</h2>
+    <p><strong>Owner:</strong> {{ seller.user.username }}</p>
+    <p><strong>Business Type:</strong> {{ seller.get_business_type_display }}</p>
+    <p><strong>PAN Number:</strong> {{ seller.pan_number }}</p>
+    <p><strong>Address:</strong> {{ seller.address }}, {{ seller.city }}, {{ seller.state }}, {{ seller.country }}</p>
+    <p><strong>Status:</strong> {{ seller.is_active|yesno:"Active,Inactive" }}</p>
+
+    <a href="{% url 'seller_update' seller.id %}" class="btn btn-warning">Edit</a>
+    <a href="{% url 'seller_delete' seller.id %}" class="btn btn-danger">Delete</a>
+    <a href="{% url 'seller_list' %}" class="btn btn-secondary">Back</a>
+</div>
+{% endblock %}
