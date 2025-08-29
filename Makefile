@@ -31,3 +31,6 @@ docker-log:
 
 docker-shell:
 	docker exec -it pythonapp bash
+
+dep:
+	pip install -r requirements.txt
